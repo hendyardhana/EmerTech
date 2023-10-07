@@ -9,6 +9,7 @@ import 'package:hello_world/screen/my_courses.dart';
 import 'package:hello_world/screen/quiz.dart';
 import 'package:hello_world/screen/search.dart';
 import 'package:hello_world/screen/studentList.dart';
+import 'package:hello_world/screen/leaderboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 String active_user = "";
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
         'studentList': (context) => StudentList(),
         'myCourses': (context) => MyCourses(),
         'add_recipe': (context) => AddRecipe(),
-        'quiz': (context) => Quiz()
+        'quiz': (context) => Quiz(),
+        'leaderboard': (context) => Leaderboard()
       },
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -287,6 +289,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Navigator.push(
                 //     context, MaterialPageRoute(builder: (context) => About()));
                 Navigator.popAndPushNamed(context, "quiz");
+              }),
+              ListTile(
+              title: Text("Leaderboard"),
+              leading: Icon(Icons.quiz),
+              onTap: () {
+                // Navigator.push(
+                //     context, MaterialPageRoute(builder: (context) => About()));
+                Navigator.popAndPushNamed(context, "leaderboard");
               }),
           ListTile(
               title: Text("LogOut"),
